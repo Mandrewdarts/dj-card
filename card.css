@@ -1,0 +1,64 @@
+::slotted(*) {
+  padding: 0;
+  margin: 0;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  background-color: #fffbfe;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  overflow: hidden;
+  max-width: 300px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-title {
+  margin-top: 1rem;
+}
+
+.card-title slot[name='title']::slotted(h1),
+.card-title slot[name='title']::slotted(h2) {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+.card-image {
+  margin-left: -1rem;
+  margin-right: -1rem;
+  margin-top: -1rem;
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.card-image slot[name='image']::slotted(img) {
+  width: 100%;
+}
+
+.card-content ::slotted(*) {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.card-action {
+  margin-top: 1rem;
+  display: flex;
+}
+
+slot[name='actions']::slotted(button),
+slot[name='actions']::slotted(a) {
+  margin-right: 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 999999px;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  background-color: #6002ee;
+  color: white;
+}

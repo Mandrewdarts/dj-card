@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card Web Component</title>
+
+  <style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+      height: 100vh;
+    }
+
+    dj-card:defined {
+      opacity: 1;
+    }
+
+    dj-card {
+      transition: opacity .25s;
+      opacity: 0;
+      margin: 1rem;
+    }
+
+    dj-card.custom {
+      border-radius: 4px;
+      background-color: rebeccapurple;
+      color: white;
+    }
+
+    dj-card.custom button {
+      background-color: white;
+      color: rebeccapurple;
+    }
+
+    dj-card.custom::part(actions) {
+      padding: 1rem;
+      border-radius: 4px;
+      background-color: rgba(255, 255, 255, .1);
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Card -->
+  <!-- <div class="card">
+    <div class="card-image">
+      <img src="https://unsplash.it/300" alt="" srcset="">
+    </div>
+    <div class="card-content">
+      <div class="card-title">
+        <h1>Card Title</h1>
+      </div>
+      <div class="card-content">
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto eveniet officiis quaerat rem dolorem dolorum
+          dolor quod maxime beatae. Ab ea vero dolorem aperiam quod tenetur dignissimos! Sed, architecto ipsum!
+        </p>
+      </div>
+
+      <div class="card-action">
+        <button>View</button>
+        <a href="https://m3.material.io/components/cards">View</a>
+      </div>
+    </div>
+  </div> -->
+  <!-- /Card -->
+
+  <dj-card>
+    <img slot="image" src="https://unsplash.it/300" alt="" srcset="" />
+    <h2 slot="title">Web Components</h2>
+    <p>
+      This is a quick video about web components. We will be creating a reusable card component.
+    </p>
+    <button slot="actions">View</button>
+    <a slot="actions" href="https://m3.material.io/components/cards">Go -></a>
+  </dj-card>
+
+  <dj-card class="custom">
+    <h2 slot="title">This is another card.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint odio impedit molestiae? Neque iste veritatis sit
+      est. Blanditiis odio aspernatur molestias, minus doloribus alias, suscipit iusto laboriosam, nisi quisquam veniam?
+    </p>
+
+    <button slot="actions">Click</button>
+    <button slot="actions">Go</button>
+  </dj-card>
+
+  <script type="module" src="card.js"></script>
+</body>
+
+</html>
