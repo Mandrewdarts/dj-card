@@ -4,9 +4,10 @@
 }
 
 :host {
+  --dj-card-bg: #fffbfe;
   display: flex;
   flex-direction: column;
-  background-color: #fffbfe;
+  background-color: var(--dj-card-bg);
   padding: 1rem;
   border-radius: 0.75rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
